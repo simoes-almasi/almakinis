@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title id="site-title">Almakini Loja de Laces e Perucas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #000;
+        }
+        header {
+            background-color: #e91e63;
+            color: #fff;
+            padding: 20px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .logo {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .search-bar {
+            width: 50%;
+            display: flex;
+            margin: 10px 0;
+        }
+        .search-bar input {
+            flex-grow: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+        .search-bar button {
+            padding: 10px;
+            background-color: #f06292;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        .icon-container {
+            display: flex;
+            align-items: center;
+        }
+        .icon-container a {
+            color: #fff;
+            margin-left: 15px;
+            font-size: 1.5em;
+            position: relative;
+        }
+        nav {
+            background-color: #f06292;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            width: 100%;
+            z-index: 10;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #c2185b;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        section h2 {
+            color: #e91e63;
+        }
+        .banner {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            margin: 0;
+            display: block;
+        }
+        footer {
+            background-color: #333;
+            color: #f06292;
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+        }
+        footer a {
+            color: #f06292;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.5em;
+        }
+        .status {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .open {
+            color: green;
+        }
+        .closed {
+            color: red;
+        }
+        #countdown {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #f06292;
+        }
+        .flag-icon {
+            width: 30px;
+            height: auto;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Almakini's</div>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Buscar produtos...">
+        <button>Buscar</button>
+    </div>
+    <div class="icon-container">
+        <a href="#"><i class="fas fa-heart"></i></a>
+        <a href="#"><i class="fas fa-user"></i></a>
+        <a href="#"><i class="fas fa-shopping-cart"></i><span class="badge">3</span></a>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Português" class="flag-icon" onclick="setLanguage('pt')">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="English" class="flag-icon" onclick="setLanguage('en')">
+    </div>
+</header>
+
+<!-- Navegação Principal com novas categorias -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="perucas.html">Perucas</a>
+    <a href="laces.html">Laces</a>
+    <a href="maquiagens.html">Maquiagens</a>
+    <a href="perfumes.html">Perfumes</a>
+    <a href="joias.html">Joias</a>
+    <a href="acessorios.html">Acessórios</a>
+</nav>
+
+<img src="https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/07/31/40977144-site-laces-ilusrea.jpg" alt="Mulher com perucas" class="banner">
+
+<section>
+    <h2 id="section-title">Transforme seu visual com nossas perucas e laces incríveis!</h2>
+    <p id="section-description">Explore nossa coleção de laces e perucas de alta qualidade que vão realçar sua beleza.</p>
+</section>
+
+<!-- Novo rodapé com navegação secundária -->
+<footer>
+    <div>
+        <a href="politica-de-trocas.html">Política de Trocas</a> | 
+        <a href="formas-de-pagamento.html">Formas de Pagamento</a> | 
+        <a href="contato.html">Contato</a> | 
+        <a href="sobre-nos.html">Sobre Nós</a>
+    </div>
+    
+    <p>&copy; 2024 <span id="footer-rights">Almakini's Loja de Laces e Perucas. Todos os direitos reservados.</span></p>
+    <p><a href="https://www.almakini.com.br">www.almakini.com.br</a></p>
+
+    <div class="status">
+        <span id="status"></span>
+        <div id="countdown"></div>
+    </div>
+
+    <p>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=55XXXXXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </p>
+</footer>
+
+<script>
+    let currentLanguage = 'pt';
+
+    function setLanguage(language) {
+        currentLanguage = language;
+        document.getElementById("site-title").innerText = currentLanguage === 'pt' ? "Almakini's Loja de Laces e Perucas" : "Almakini's Wigs and Laces Store";
+        document.getElementById("section-title").innerText = currentLanguage === 'pt' ? "Transforme seu visual com nossas perucas e laces incríveis!" : "Transform your look with our amazing wigs and laces!";
+        document.getElementById("section-description").innerText = currentLanguage === 'pt' ? "Explore nossa coleção de laces e perucas de alta qualidade que vão realçar sua beleza." : "Explore our collection of high-quality laces and wigs that will enhance your beauty.";
+        document.getElementById("footer-rights").innerText = currentLanguage === 'pt' ? "Almakini's Loja de Laces e Perucas. Todos os direitos reservados." : "Almakini's Wigs and Laces Store. All rights reserved.";
+        updateStatusAndCountdown();
+    }
+
+    function updateStatusAndCountdown() {
+        const currentHour = new Date().getHours();
+        const statusElement = document.getElementById("status");
+        const countdownElement = document.getElementById("countdown");
+
+        if (currentHour >= 9 && currentHour < 18) {
+            statusElement.innerText = currentLanguage === 'pt' ? "Estamos abertos!" : "We're open!";
+            statusElement.className = "open";
+            countdownElement.innerText = currentLanguage === 'pt' ? `Fechamos em ${18 - currentHour} horas` : `We close in ${18 - currentHour} hours`;
+        } else {
+            statusElement.innerText = currentLanguage === 'pt' ? "Estamos fechados!" : "We're closed!";
+            statusElement.className = "closed";
+            countdownElement.innerText = currentLanguage === 'pt' ? `Abrimos em ${9 + (24 - currentHour)} horas` : `We open in ${9 + (24 - currentHour)} hours`;
+        }
+    }
+
+    setLanguage('pt');
+</script>
+
+</body>
+</html>

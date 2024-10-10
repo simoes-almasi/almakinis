@@ -18,7 +18,7 @@
         header {
             background-color: #e91e63;
             color: #fff;
-            padding: 20px 20px;
+            padding: 20px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -35,7 +35,8 @@
             text-decoration: none;
         }
         .search-bar {
-            width: 50%;
+            width: 100%;
+            max-width: 500px;
             display: flex;
             margin: 10px 0;
         }
@@ -55,6 +56,7 @@
         .icon-container {
             display: flex;
             align-items: center;
+            margin-top: 10px;
         }
         .icon-container a {
             color: #fff;
@@ -62,13 +64,18 @@
             font-size: 1.5em;
             position: relative;
         }
+        .icon-container .flag-icon {
+            width: 30px;
+            height: auto;
+            margin-left: 10px;
+            cursor: pointer;
+        }
         nav {
             background-color: #f06292;
             display: flex;
             justify-content: center;
             padding: 10px 0;
             width: 100%;
-            z-index: 10;
         }
         nav a {
             color: #fff;
@@ -92,7 +99,6 @@
             height: 300px;
             object-fit: cover;
             margin: 0;
-            display: block;
         }
         footer {
             background-color: #333;
@@ -122,11 +128,72 @@
             font-size: 1.2em;
             color: #f06292;
         }
-        .flag-icon {
-            width: 30px;
-            height: auto;
-            margin-left: 10px;
-            cursor: pointer;
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .search-bar {
+                width: 90%;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 5px 0;
+                font-size: 16px;
+            }
+
+            .icon-container {
+                flex-direction: column;
+            }
+
+            .icon-container a {
+                margin: 10px 0;
+            }
+
+            .logo {
+                font-size: 2em;
+            }
+
+            .banner {
+                height: 200px;
+            }
+
+            footer a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 15px;
+            }
+
+            .logo {
+                font-size: 1.8em;
+            }
+
+            .search-bar {
+                width: 100%;
+            }
+
+            .icon-container {
+                font-size: 1.2em;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            footer a {
+                font-size: 1.2em;
+            }
+
+            .banner {
+                height: 150px;
+            }
         }
     </style>
 </head>
@@ -194,14 +261,14 @@
 
     function setLanguage(language) {
         currentLanguage = language;
-        document.getElementById("site-title").innerText = currentLanguage === 'pt' ? "Almakini's Loja de Laces e Perucas" : "Almakini's Wigs and Laces Store";
+        document.getElementById("site-title").innerText = currentLanguage === 'pt' ? "Almakini's Loja de Laces e Perucas" : "Almakini's Wig and Lace Store";
         document.getElementById("section-title").innerText = currentLanguage === 'pt' ? "Transforme seu visual com nossas perucas e laces incríveis!" : "Transform your look with our amazing wigs and laces!";
         document.getElementById("section-description").innerText = currentLanguage === 'pt' ? "Explore nossa coleção de laces e perucas de alta qualidade que vão realçar sua beleza." : "Explore our collection of high-quality laces and wigs that will enhance your beauty.";
-        document.getElementById("footer-rights").innerText = currentLanguage === 'pt' ? "Almakini's Loja de Laces e Perucas. Todos os direitos reservados." : "Almakini's Wigs and Laces Store. All rights reserved.";
-        updateStatusAndCountdown();
+        document.getElementById("footer-rights").innerText = currentLanguage === 'pt' ? "Almakini's Loja de Laces e Perucas. Todos os direitos reservados." : "Almakini's Wig and Lace Store. All rights reserved.";
+        updateStoreStatus();
     }
 
-    function updateStatusAndCountdown() {
+    function updateStoreStatus() {
         const currentHour = new Date().getHours();
         const statusElement = document.getElementById("status");
         const countdownElement = document.getElementById("countdown");
